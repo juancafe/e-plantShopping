@@ -12,9 +12,9 @@ const CartItem = ({ onContinueShopping }) => {
  
   };
 
-  const handleContinueShopping = (e) => {
-   
-  };
+ const handleCheckoutShopping = (e) => {
+  alert('Functionality to be added for future reference');
+};
 
 
 
