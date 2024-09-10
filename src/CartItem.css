@@ -1,5 +1,4 @@
 /* CartItem.css */
-/* CartItem.css */
 
 .cart-item {
   display: flex;
@@ -241,7 +240,3 @@
     margin-top: 40px;
   }
   
-  .product-button.added-to-cart {
-  background-color: grey; /* Grey background when disabled */
-  cursor: not-allowed; /* Change cursor to indicate it's disabled */
-}
