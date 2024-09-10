@@ -5,6 +5,9 @@ import CartItem from './CartItem';
 function ProductList() {
     const [showCart, setShowCart] = useState(false); 
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
+    const [addedToCart, setAddedToCart] = useState({});
+ //   const dispatch = useDispatch();
+ //   const cartItems = useSelector(state => state.cart.items);
 
     const plantsArray = [
         {
@@ -247,6 +250,15 @@ const handlePlantsClick = (e) => {
     e.preventDefault();
     setShowCart(false);
   };
+
+  const handleAddToCart = (plant) => {
+    dispatch(addItem(plant)); // Dispatch the addItem action with plant details
+    setAddedToCart((prevState) => ({
+      ...prevState,
+      [plant.name]: true, // Mark the plant as added to the cart
+    }));
+  };
+
     return (
         <div>
             <div className="navbar" style={styleObj}>
@@ -277,8 +289,15 @@ const handlePlantsClick = (e) => {
                     <div className="product-card" key={plantIndex}>
                         <img className="product-image" src={plant.image} alt={plant.name} />
                         <div className="product-title">{plant.name}</div>
+                        <div className="product-description">{plant.description}</div>
+                         <div className="product-cost">{plant.cost}</div>
                          {/*Similarly like the above plant.name show other details like description and cost*/}
-                        <button  className="product-button" onClick={() => handleAddToCart(plant)}>Add to Cart</button>
+                        <button className="product-button"
+                        onClick={() => handleAddToCart(plant)}
+                        disabled={addedToCart[plant.name]} // Disable button if already added
+                        >
+                        {addedToCart[plant.name] ? "Added to Cart" : "Add to Cart"}
+                        </button>
                      </div>
                      ))}
                  </div>
