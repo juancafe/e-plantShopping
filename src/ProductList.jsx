@@ -246,19 +246,7 @@ const handlePlantsClick = (e) => {
    const handleContinueShopping = (e) => {
     e.preventDefault();
     setShowCart(false);
-    
   };
-
-  const [addedToCart, setAddedToCart] = useState({});
-
-  const handleAddToCart = (product) => {
-    dispatch(addItem(product)); // Assuming this updates the cart state in your store
-    setAddedToCart((prevState) => ({
-      ...prevState,
-      [product.name]: true, // Mark the product as added
-    }));
-  };
-  
     return (
         <div>
             <div className="navbar" style={styleObj}>
