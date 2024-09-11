@@ -4,8 +4,8 @@ import { removeItem, updateQuantity } from "./CartSlice";
 import "./CartItem.css";
 
 const CartItem = ({ onContinueShopping }) => {
-  const cart = useSelector((state) => state.cart.items);
-  const dispatch = useDispatch();
+const cart = useSelector((state) => state.cart.items);
+const dispatch = useDispatch();
 
   // Calculate total amount for all products in the cart
   const calculateTotalAmount = () => {
@@ -20,7 +20,7 @@ const CartItem = ({ onContinueShopping }) => {
   };
 
   const handleContinueShopping = (e) => {
-        // Call the function passed from the parent component to navigate back to the plant listing page
+    // Call the function passed from the parent component to navigate back to the plant listing page
     //e.preventDefault();
     if (onContinueShopping) {
       onContinueShopping(); // Call the callback to continue shopping
@@ -102,7 +102,7 @@ const CartItem = ({ onContinueShopping }) => {
         className="total_cart_amount"
       ></div>
       <div className="continue_shopping_btn">
-        <button className="get-started-button" onClick={(e) => handleContinueShopping(e)} > Continue Shopping  </button>
+        <button className="get-started-button" autofocus onClick={handleContinueShopping} > Continue Shopping  </button>
         <br />
         <button className="get-started-button1" onClick={() => alert("Coming Soon")} > Checkout </button>
       </div>
