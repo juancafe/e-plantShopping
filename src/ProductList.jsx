@@ -300,13 +300,11 @@ function ProductList() {
     e.preventDefault();
     setShowCart(true);
   };
-
   const handlePlantsClick = (e) => {
     e.preventDefault();
     setShowPlants(true);
     setShowCart(false);
   };
-
   const handleContinueShopping = (e) => {
     e.preventDefault();
     setShowCart(false);

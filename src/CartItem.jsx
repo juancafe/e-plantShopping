@@ -21,7 +21,7 @@ const CartItem = ({ onContinueShopping }) => {
 
   const handleContinueShopping = (e) => {
         // Call the function passed from the parent component to navigate back to the plant listing page
-    e.preventDefault();
+    //e.preventDefault();
     if (onContinueShopping) {
       onContinueShopping(); // Call the callback to continue shopping
     }
@@ -102,19 +102,9 @@ const CartItem = ({ onContinueShopping }) => {
         className="total_cart_amount"
       ></div>
       <div className="continue_shopping_btn">
-        <button
-          className="get-started-button"
-          onClick={(e) => handleContinueShopping(e)}
-        >
-          Continue Shopping
-        </button>
+        <button className="get-started-button" onClick={(e) => handleContinueShopping(e)} > Continue Shopping  </button>
         <br />
-        <button
-          className="get-started-button1"
-          onClick={() => alert("Coming Soon")}
-        >
-          Checkout
-        </button>
+        <button className="get-started-button1" onClick={() => alert("Coming Soon")} > Checkout </button>
       </div>
     </div>
   );
