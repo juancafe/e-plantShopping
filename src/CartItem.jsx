@@ -104,7 +104,7 @@ const handleContinueShopping = (e) => {
         className="total_cart_amount"
       ></div>
       <div className="continue_shopping_btn">
-        <button className="get-started-button" autofocus onClick={handleContinueShopping} > Continue Shopping  </button>
+        <button className="get-started-button" autofocus onClick={(e) => handleContinueShopping(e)}> Continue Shopping  </button>
         <br />
         <button className="get-started-button1" onClick={() => alert("Coming Soon")} > Checkout </button>
       </div>
