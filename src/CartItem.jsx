@@ -20,7 +20,6 @@ const dispatch = useDispatch();
   };
 
 const handleContinueShopping = (e) => {
-  //const handleContinueShopping = (e) => {
     // Call the function passed from the parent component to navigate back to the plant listing page
     e.preventDefault();
     alert("Continue Shopping NO funciona 2 ?????");
