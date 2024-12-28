@@ -23,7 +23,7 @@ const handleContinueShopping = (e) => {
   //const handleContinueShopping = (e) => {
     // Call the function passed from the parent component to navigate back to the plant listing page
     e.preventDefault();
-    alert("Continue Shopping NO funciona ?????");
+    alert("Continue Shopping NO funciona 2 ?????");
     if (onContinueShopping) {
       onContinueShopping(); // Call the callback to continue shopping
     }
@@ -104,7 +104,7 @@ const handleContinueShopping = (e) => {
         className="total_cart_amount"
       ></div>
       <div className="continue_shopping_btn">
-        <button className="get-started-button" autofocus onClick={(e) => handleContinueShopping(e)}> Continue Shopping  </button>
+        <button className="get-started-button" autofocus onClick={(e) => handleContinueShopping(e)}> Continue Shopping  2 </button>
         <br />
         <button className="get-started-button1" onClick={() => alert("Coming Soon")} > Checkout </button>
       </div>
