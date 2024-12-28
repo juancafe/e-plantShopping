@@ -1,7 +1,7 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { removeItem, updateQuantity } from "./CartSlice";
-import "./CartItem.css";
+import React, { useState,useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { removeItem, updateQuantity, decrementQuantity} from './CartSlice';
+import './CartItem.css';
 
 const CartItem = ({ onContinueShopping }) => {
 const cart = useSelector((state) => state.cart.items);
@@ -20,13 +20,12 @@ const calculateTotalAmount = () => {
 };
 
 const handleContinueShopping = (e) => {
-    // Call the function passed from the parent component to navigate back to the plant listing page
-    e.preventDefault();
-    alert("Continue Shopping NO funciona 2 ?????");
-    if (onContinueShopping) {
-      onContinueShopping(); // Call the callback to continue shopping
-    }
-};    
+ //   e.preventDefault();
+    console.log("In handleContinueShopping");
+    //  setShowCart(false);
+    // Call the onContinueShopping function passed from the parent component
+    onContinueShopping(e); 
+  };
 
 const handleCheckoutShopping = (e) => {
     alert("Functionality to be added for future reference");
@@ -103,8 +102,8 @@ const calculateTotalCost = (item) => {
         className="total_cart_amount"
       ></div>
       <div className="continue_shopping_btn">
-        <button className="get-started-button" autofocus onClick={(e) => handleContinueShopping(e)}> Continue Shopping  2 </button>
-        <br />
+      <button className="get-started-button" onClick={handleContinueShopping}>Continue Shopping</button> 
+      <br/>
         <button className="get-started-button1" onClick={() => alert("Coming Soon")} > Checkout </button>
       </div>
     </div>
