@@ -19,10 +19,10 @@ const dispatch = useDispatch();
       .toFixed(2); // Format to two decimal places
   };
 
-const handleContinueShopping = () => {
+const handleContinueShopping = (e) => {
   //const handleContinueShopping = (e) => {
     // Call the function passed from the parent component to navigate back to the plant listing page
-    //e.preventDefault();
+    e.preventDefault();
     alert("Continue Shopping NO funciona ?????");
     if (onContinueShopping) {
       onContinueShopping(); // Call the callback to continue shopping
