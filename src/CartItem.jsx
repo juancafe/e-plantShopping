@@ -7,8 +7,8 @@ const CartItem = ({ onContinueShopping }) => {
 const cart = useSelector((state) => state.cart.items);
 const dispatch = useDispatch();
 
-  // Calculate total amount for all products in the cart
-  const calculateTotalAmount = () => {
+// Calculate total amount for all products in the cart
+const calculateTotalAmount = () => {
     return cart
       .reduce((total, item) => {
         // Parse the cost to a float (assumes cost is a string like "$10.99")
@@ -17,7 +17,7 @@ const dispatch = useDispatch();
         return total + item.quantity * itemCost;
       }, 0)
       .toFixed(2); // Format to two decimal places
-  };
+};
 
 const handleContinueShopping = (e) => {
     // Call the function passed from the parent component to navigate back to the plant listing page
@@ -26,17 +26,17 @@ const handleContinueShopping = (e) => {
     if (onContinueShopping) {
       onContinueShopping(); // Call the callback to continue shopping
     }
-  };    
+};    
 
-  const handleCheckoutShopping = (e) => {
+const handleCheckoutShopping = (e) => {
     alert("Functionality to be added for future reference");
-  };
+};
 
-  const handleIncrement = (item) => {
+const handleIncrement = (item) => {
     dispatch(updateQuantity({ name: item.name, quantity: item.quantity + 1 }));
-  };
+};
 
-  const handleDecrement = (item) => {
+const handleDecrement = (item) => {
     if (item.quantity > 1) {
       dispatch(
         updateQuantity({ name: item.name, quantity: item.quantity - 1 })
@@ -44,17 +44,17 @@ const handleContinueShopping = (e) => {
     } else {
       dispatch(removeItem(item.name));
     }
-  };
+};
 
-  const handleRemove = (item) => {
+const handleRemove = (item) => {
     dispatch(removeItem(item.name));
-  };
+};
 
-  // Calculate total cost based on quantity for an item
-  const calculateTotalCost = (item) => {
+// Calculate total cost based on quantity for an item
+const calculateTotalCost = (item) => {
     const itemCost = parseFloat(item.cost.replace("$", ""));
     return (item.quantity * itemCost).toFixed(2);
-  };
+};
 
   return (
     <div className="cart-container">
