@@ -27,7 +27,7 @@ const handleContinueShopping = (e) => {
     if (onContinueShopping) {
       onContinueShopping(); // Call the callback to continue shopping
     }
-    
+  };    
 
   const handleCheckoutShopping = (e) => {
     alert("Functionality to be added for future reference");
